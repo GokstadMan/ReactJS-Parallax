@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Parallax } from "react-parallax";
+import Retro from "./images/retro.jpg";
+import Solnedgang from "./images/solnedgang i Larvik.jpg";
+import Sommer from "./images/sommer - Larvik.jpg";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Parallax strength={300} bgImage={Retro}>
+        <div className="content">
+          <div className="text-content">Normal Parallax</div>
+        </div>
+      </Parallax>
+
+      <Parallax strength={300} blur={2} bgImage={Sommer}>
+        <div className="content">
+          <div className="text-content">Blur</div>
+        </div>
+      </Parallax>
+
+      <Parallax strength={-600} bgImage={Solnedgang}>
+        <div className="content">
+          <div className="text-content">Reverse Parallax</div>
+        </div>
+      </Parallax>
+
+      <div className="content"></div>
     </div>
   );
 }
